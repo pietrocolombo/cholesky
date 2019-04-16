@@ -1,2 +1,2 @@
-# choleski-matlab
-progetto calcolo scientifico Matlab
+# Choleski-Matlab
+Progetto metodi del calcolo scientifico - Matlab
