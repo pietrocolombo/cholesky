@@ -1,10 +1,11 @@
-<<<<<<< HEAD
+
 # choleski-matlab
 progetto calcolo scientifico Matlab
 
 Download Matrici:
+
 https://drive.google.com/open?id=15th3lMw27xO14J9ouHSS9tRTPGXG1iLW
-=======
+
 # Choleski-Matlab
 Progetto metodi del calcolo scientifico - Matlab
 
@@ -118,4 +119,3 @@ La relazione dovrà essere scritta direttamente in un formato adatto ad essere p
 gruppo deve essere in grado di presentare qualsiasi parte della relazione.
 La relazione mi dovrà essere consegnata almeno 3 giorni prima dell’esame.
 Se avete dei dubbi scrivetemi.
->>>>>>> cf47b1a199b92ff8db36126ef213b35b33e17ad6
