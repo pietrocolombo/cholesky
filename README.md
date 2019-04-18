@@ -60,70 +60,113 @@ L’idea per trattare matrici sparse generali è di fare una permutazione prelim
 e colonne in modo che l’algoritmo di Gauss generi il minor numero possibile di elementi
 diversi da zero.
 
-1
-Ci sono diverse tecniche per effettuare questa permutazione preliminare; una eccellente
+
+Ci sono diverse tecniche per effettuare questa permutazione preliminare; 
+
+una eccellente
 introduzione all’argomento è il libro Direct Methods for Sparse Linear Systems (SIAM
 2006), di Timothy A. Davis (se vi interessa posso procurarvene una copia).
+
+
 Per tutti i dettagli si veda la sua pagina web:
 http://faculty.cse.tamu.edu/davis/background.html.
+
+
 Le matrici simmetriche e definite positive che dovrete considerare per la relazione fanno
 parte della SuiteSparse Matrix Collection che colleziona matrici sparse derivanti da
 applicazioni di problemi reali (ingegneria strutturale, fluidodinamica, elettromagnetismo,
-termodinamica, computer graphics/vision, network e grafi). Trovate tutte le matrici collegandovi alla pagina https://sparse.tamu.edu/.
+termodinamica, computer graphics/vision, network e grafi).
+
+Trovate tutte le matrici collegandovi alla pagina https://sparse.tamu.edu/.
 Consultate anche la guida https://sparse.tamu.edu/about.
+
+
 In particolare le matrici simmetriche e definite positive che analizzerete sono le seguenti:
+
 • Flan 1565
+
 • StocF-1465
+
 • cfd2
+
 • cfd1
+
 • G3 circuit
+
 • parabolic fem
+
 • apache2
+
 • shallow water1
+
 • ex15
+
 Osservate che il trattamento per matrici simmetriche e definite positive e matrici generiche
-può essere molto diverso. Si veda per esempio la seguente documentazione MATLAB
+può essere molto diverso.
+
+Si veda per esempio la seguente documentazione MATLAB
 https://it.mathworks.com/help/matlab/ref/mldivide.html.
+
 Progetto. Lo scopo del progetto è confrontare il solutore per matrici sparse simmetriche e definite positive di MATLAB con quello di (almeno una) libreria open-source a
-vostra scelta. Il confronto va fatto sulla stessa macchina e sulle due architetture
+vostra scelta. 
+
+Il confronto va fatto sulla stessa macchina e sulle due architetture
 Windows e Linux.
+
 ATTENZIONE: MATLAB si accorge da solo se la matrice che gli passate è simmetrica
-e definita positiva. Questo non succede (di solito) per le librerie open source: dovete
+e definita positiva.
+
+Questo non succede (di solito) per le librerie open source: dovete
 stare attenti ad utilizzare algoritmi specifici per matrici simmetriche e definite positive.
 Se non lo fate, potreste ottenere dei risultati molto peggiori.
+
 Analizzate tutte le matrici che riuscite, iniziando da quelle più piccole.
+
 In ciascuno dei due ambienti di programmazione, utilizzate un solutore diretto per matrici
 simmetriche e definite positive sparse risolvendo il sistema lineare Ax=b dove il termine
 noto b è scelto in modo che la soluzione esatta sia il vettore xe=[1 1 1 1 1 1 ...],
 avente tutte le componenti uguali a 1: in altre parole, b=A*xe.
+
 Per ognuna delle matrici occorre determinare:
+
 • il tempo necessario per calcolare la soluzione x;
-2
+
+
 • l’errore relativo tra la soluzione calcolata x e la soluzione esatta xe, definito da:
 errore relativo =
 kx − xek2
 kxek2
+
 dove kvk2 è la norma euclidea del vettore v;
+
 • la memoria necessaria per risolvere il sistema, ovvero grosso modo l’aumento della
 dimensione del programma in memoria da subito dopo aver letto la matrice a dopo
 aver risolto il sistema.
+
 Riportate in un grafico queste tre quantità mettendo in ascissa la dimensione della matrice
-e in ordinata tempo, errore e memoria. Sarà opportuno che la scala delle ordinate sia
+e in ordinata tempo, errore e memoria.
+
+Sarà opportuno che la scala delle ordinate sia
 logaritmica, dato che i valori da rappresentare saranno di ordini di grandezza diversi.
-Riassunto
+
 Riassumendo, la relazione dovrà contenere:
+
 • Per ogni ambiente di programmazione (MATLAB + open source a vostra scelta)
 una breve descrizione della libreria usata mettendo in evidenza le sue caratteristiche
 e se è documentata e mantenuta;
+
 • Per ogni ambiente di programmazione (MATLAB e open source), per ogni sistema
 operativo (Linux e Windows) e per ogni parametro (velocità, precisione e occupazione di memoria), eseguire gli algoritmi sulla stessa macchina e riportare i grafici
 come descritto sopra;
+
 • Grafici riassuntivi che permettano il confronto tra le varie situazioni e consentano
 di prendere una decisione operativa;
+
 • Il listato del codice.
-E’ possibile lavorare in gruppo purchè i gruppi siano composti al massimo di 3 studenti.
-La relazione dovrà essere scritta direttamente in un formato adatto ad essere proiettata
-(divisa in slides); all’esame verrà richiesto di farne la presentazione. Ogni membro del
+
+Ogni membro del
 gruppo deve essere in grado di presentare qualsiasi parte della relazione.
+
 La relazione mi dovrà essere consegnata almeno 3 giorni prima dell’esame.
+
 Se avete dei dubbi scrivetemi.
