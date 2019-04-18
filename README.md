@@ -1,57 +1,65 @@
+Progetto metodi del calcolo scientifico - Matlab - Progetto 1
 
-# choleski-matlab
-progetto calcolo scientifico Matlab
+### Argomenti
 
-Download Matrici:
+- Algebra lineare numerica
 
-https://drive.google.com/open?id=15th3lMw27xO14J9ouHSS9tRTPGXG1iLW
+- Sistemi lineari con matrici sparse simmetriche e definite positive
 
-# Choleski-Matlab
-Progetto metodi del calcolo scientifico - Matlab
+- Download Matrici:
+  https://drive.google.com/open?id=15th3lMw27xO14J9ouHSS9tRTPGXG1iLW
 
-AA 2018-2019 - Metodi del Calcolo Scientifico - Progetto 1
-Algebra lineare numerica
-Sistemi lineari con matrici sparse simmetriche e definite positive
-6 aprile 2019
-Introduzione. Lo scopo di questo progetto è di studiare l’implementazione in ambienti
-di programmazione open source del metodo di Choleski per la risoluzione sistemi lineari
-per matrici sparse, simmetriche e definite positive, e di confrontarli con l’implementazione
-di MATLAB.
-Immaginate che la vostra azienda abbia la necessità di munirsi di un ambiente di programmazione per risolvere con il metodo di Choleski sistemi lineari con matrici sparse e definite positive di grandi dimensioni. L’alternativa è tra software
-proprietario (MATLAB) oppure open source e anche tra Windows oppure Linux.
-Vi si richiede quindi di confrontare in ambiente Linux e Windows, e sulla stessa macchina,
-MATLAB e una libreria open source a vostra scelta. Il confronto deve avvenire in termini
-di tempo, accuratezza, impiego della memoria e anche facilità d’uso e documentazione.
-In altre parole, è meglio affidarsi alla sicurezza di MATLAB pagando oppure vale la pena
-di avventurarsi nel mondo open source? Ed `e meglio lavorare in ambiente Linux oppure
-in ambiente Windows?
-Matrici sparse. Le matrici sparse sono matrici con un grande numero di elementi
-uguali a zero. Spesso il numero di elementi diversi di zero su ogni riga `e un numero
-piccolo (per esempio dell’ordine di 101
-) indipendente dalla dimensione della matrice, che
-può essere anche dell’ordine di 108
-. Molti problemi del calcolo scientifico si riconducono
-alla soluzione di uno o più sistemi lineari con matrice dei coefficienti sparsa. Per esempio,
-i motori di ricerca del web portano naturalmente a matrici grandissime estremamente
+
+### Introduzione
+Lo scopo di questo progetto è di studiare l’implementazione in ambienti
+
+di programmazione open source del metodo di Choleski per la risoluzione sistemi lineari per matrici sparse, simmetriche e definite positive, e di confrontarli con l’implementazione di MATLAB.
+
+Immaginate che la vostra azienda abbia la necessità di munirsi di un ambiente di programmazione per risolvere con il metodo di Choleski sistemi lineari con matrici sparse e definite positive di grandi dimensioni.
+
+L’alternativa è tra software proprietario (MATLAB) oppure open source e anche tra Windows oppure Linux.
+
+Vi si richiede quindi di confrontare in ambiente Linux e Windows, e sulla stessa macchina, MATLAB e una libreria open source a vostra scelta.
+
+Il confronto deve avvenire in termini di tempo, accuratezza, impiego della memoria e anche facilità d’uso e documentazione.
+
+In altre parole, è meglio affidarsi alla sicurezza di MATLAB pagando oppure vale la pena di avventurarsi nel mondo open source? Ed è meglio lavorare in ambiente Linux oppure in ambiente Windows?
+
+## Matrici sparse
+Le matrici sparse sono matrici con un grande numero di elementi
+uguali a zero. Spesso il numero di elementi diversi di zero su ogni riga è un
+
+numero piccolo (per esempio dell’ordine di 101) indipendente dalla dimensione della matrice, 
+
+che può essere anche dell’ordine di 108.
+
+Molti problemi del calcolo scientifico si riconducono
+alla soluzione di uno o più sistemi lineari con matrice dei coefficienti sparsa.
+
+Per esempio, i motori di ricerca del web portano naturalmente a matrici grandissime estremamente
 sparse.
+
 Le matrici sparse si possono memorizzare in modo compatto, tenendo solo conto degli
-elementi diversi da zero; per esempio, è sufficiente per ogni elemento diverso da zero
-memorizzare solo la sua posizione (i, j) e il suo valore aij , e semplicemente ignorare gli
-elementi uguali a zero.
-Risoluzione di sistemi lineari con matrici sparse. Le considerazioni seguenti fatte
-per il metodo di eliminazione di Gauss valgono anche per il metodo di Choleski, applicabile
+elementi diversi da zero; per esempio, è sufficiente per ogni elemento diverso da zero memorizzare solo la sua posizione (i, j) e il suo valore aij , e semplicemente ignorare gli elementi uguali a zero.
+
+Risoluzione di sistemi lineari con matrici sparse.
+
+Le considerazioni seguenti fatte per il metodo di eliminazione di Gauss valgono anche per il metodo di Choleski, applicabile
 ovviamente solo a matrici simmetriche e definite positive.
+
 Il semplice metodo di eliminazione di Gauss (con pivot o senza pivot) applicato alle
 matrici sparse tende a generare nuovi elementi diversi da zero, causando il riempimento
 (fill-in) della matrice triangolare finale (oppure, equivalentemente, delle matrici L ed U).
+
 Il fill-in rende il metodo di eliminazione di Gauss inutilizzabile, perch´e saremmo costretti
 ad allocare lo spazio sufficiente per rappresentare l’intera matrice.
-Ci sono tuttavia matrici sparse particolari per le quali l’algoritmo di Gauss non genera
-fill-in: per esempio le matrici tridiagonali, nelle quali gli elementi diversi da zero sono
-solo sulla diagonale principale e sulle due sottodiagonali.
+
+Ci sono tuttavia matrici sparse particolari per le quali l’algoritmo di Gauss non genera fill-in: per esempio le matrici tridiagonali, nelle quali gli elementi diversi da zero sono solo sulla diagonale principale e sulle due sottodiagonali.
+
 L’idea per trattare matrici sparse generali è di fare una permutazione preliminare di righe
 e colonne in modo che l’algoritmo di Gauss generi il minor numero possibile di elementi
 diversi da zero.
+
 1
 Ci sono diverse tecniche per effettuare questa permutazione preliminare; una eccellente
 introduzione all’argomento è il libro Direct Methods for Sparse Linear Systems (SIAM
