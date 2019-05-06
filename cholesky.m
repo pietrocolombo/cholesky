@@ -1,4 +1,5 @@
 
+x = input('nome matrice');
 matrix = importdata('../MatriciCalcoloNumerico/ex15.mat');
 A = matrix.A;
 size_mat = size(A)
@@ -7,5 +8,22 @@ xe = ones(size_mat(1,1),1);
 tic;
 b = A * xe;
 x = A \ b;
-timeElapsed = toc
-error = norm(x - xe)/norm(xe)
+timeElapsed = toc;
+error = norm(x - xe)/norm(xe);
+
+% salvataggio infomazioni
+fid = fopen( 'matrix.csv', 'a' );
+
+fprintf(fid, '%s', matrix.name, ',');
+fprintf(fid, '%s', num2str(size(matrix.A, 1)), ',');
+fprintf(fid, '%s', num2str(nnz(matrix.A)), ',');
+fprintf(fid, '%s', num2str(error), ',');
+fprintf(fid, '%s', num2str(timeElapsed), ',');
+fprintf(fid, '1,'); %Positive/Negative
+fprintf(fid, 'matlab,');
+fprintf(fid, 'linux'); %OS
+fprintf(fid, '\n');
+
+fclose(fid);
+
+% exit
