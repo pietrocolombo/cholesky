@@ -1,6 +1,6 @@
 
 x = input('nome matrice');
-matrix = importdata('../MatriciCalcoloNumerico/ex15.mat');
+matrix = importdata('../MatriciCalcoloNumerico/Flan_1565.mat');
 A = matrix.A;
 size_mat = size(A)
 xe = ones(size_mat(1,1),1);
@@ -21,9 +21,9 @@ fprintf(fid, '%s', num2str(error), ',');
 fprintf(fid, '%s', num2str(timeElapsed), ',');
 fprintf(fid, '1,'); %Positive/Negative
 fprintf(fid, 'matlab,');
-fprintf(fid, 'linux'); %OS
+fprintf(fid, 'windows'); %OS
 fprintf(fid, '\n');
 
 fclose(fid);
 
-% exit
+exit

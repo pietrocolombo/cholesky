@@ -1,0 +1,15 @@
+1. APRIRE PROGETTO MATLAB
+
+
+
+matlab -nodisplay -nosplash -nodesktop -r "run('C:\Users\co996\Documents\Metodi del Calcolo scientifico\choleski-matlab\cholesky.m');"
+
+
+2. NUOVA SHELL 
+
+cd C:\Users\co996\AppData\Local\Programs\Python\Python37\Scripts
+
+python psrecord NUMERO_PROCESSO --log prova.txt --plot prova.png
+
+CONCLUDO PROCESSO SU MATLAB
+TROVO TXT E PLOT NEL PERCORSO SOPRA (\Scripts)
