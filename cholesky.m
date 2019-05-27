@@ -1,10 +1,10 @@
 
-x = input('Inserisci nome matrice .mat','s');
+x = input('Inserisci nome matrice .mat \n','s');
 %f = fullfile('myfolder','mysubfolder','myfile.m');
-path = fullfile('home','co','Documents','Università','Metodi del calcolo scientifico','MatriciCalcoloNumerico','x');
+path = fullfile('../','MatriciCalcoloNumerico',x);
 matrix = importdata(path);
 A = matrix.A;
-size_mat = size(A)
+size_mat = size(A);
 xe = ones(size_mat(1,1),1);
 % per misurare il tempo
 tic;
