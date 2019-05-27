@@ -1,6 +1,8 @@
 
-x = input('nome matrice');
-matrix = importdata('../MatriciCalcoloNumerico/Flan_1565.mat');
+x = input('Inserisci nome matrice .mat','s');
+%f = fullfile('myfolder','mysubfolder','myfile.m');
+path = fullfile('home','co','Documents','Università','Metodi del calcolo scientifico','MatriciCalcoloNumerico','x');
+matrix = importdata(path);
 A = matrix.A;
 size_mat = size(A)
 xe = ones(size_mat(1,1),1);
