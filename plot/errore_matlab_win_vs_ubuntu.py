@@ -36,15 +36,15 @@ print(matlab_ubuntu)
     #print(row['name'], row['time'])
 
 
-plt.plot( 'name', 'time', data=matlab_win, marker='o', markerfacecolor='blue', markersize=12, color='skyblue', linewidth=4, label='time Matlab Windows')
-plt.plot( 'name', 'time', data=matlab_ubuntu, marker='o', markerfacecolor='red', markersize=12, color='orange', linewidth=4, label='time Matlab Ubuntu')
+plt.plot( 'name', 'error', data=matlab_win, marker='o', markerfacecolor='blue', markersize=12, color='skyblue', linewidth=4, label='Relative error Matlab Windows')
+plt.plot( 'name', 'error', data=matlab_ubuntu, marker='o', markerfacecolor='red', markersize=12, color='orange', linewidth=4, label='Relative error Matlab Ubuntu', linestyle='--')
 
 plt.legend()
-plt.legend(ncol=2,loc='upper left')
+plt.legend(ncol=2,loc='upper right')
 
-#plt.yscale('log')
+plt.yscale('log')
 plt.title('Matlab Ubuntu vs Matlab Windows')
-plt.ylabel('Time')
+plt.ylabel('Relative error')
 plt.xlabel('Matrix Name')
 
 plt.show()
