@@ -4,7 +4,7 @@ import platform
 
 from datetime import datetime
 
-from scipy.sparse.linalg import norm
+from scipy.sparse.linalg import norm, spsolve
 from scipy.linalg import norm
 
 from scipy import linalg
@@ -24,21 +24,26 @@ n_rows, n_columns = mat.shape
 xe = scipy.ones(n_rows)
 
 start_time = datetime.now()
-b = mat * xe
+b = scipy.io.mmread(path).tocsc() * xe
 
-#L = linalg.cholesky(mat, lower=True)
-(c, L) = linalg.cho_factor(mat, lower = True)
+L = linalg.cholesky(mat, lower=True)
+#(c, L) = linalg.cho_factor(mat, lower = True)
 
-(c, L2) = linalg.cho_factor(mat, lower = False)
-
-#x = linalg.cho_solve((L,True), b)
+#(c, L2) = linalg.cho_factor(mat, lower = False)
+print(b.shape)
+x = linalg.cho_solve((L,True), b)
+#x = spsolve(mat, b, use_umfpack = use_umfpack)
+print(x.shape)
 #L2 = linalg.cholesky(mat, lower=False)
 #x = linalg.solve_triangular(L, b, lower=True)
-A2 = L * L2
-relative_error = norm(mat - A2, 2) / norm(A2, 2)
+#A2 = L * L2
+#relative_error = norm(mat - A2, 2) / norm(A2, 2)
+print(xe)
 #relative_error = mat - A2
 t = datetime.now() - start_time
-#relative_error = norm(x - xe, 2) / norm(xe, 2)
+print("prova")
+
+relative_error = norm(x - xe, 2) / norm(xe, 2)
 
 print("finished!\n")
 with open('matrix_py_false.csv','a') as csvFile:
