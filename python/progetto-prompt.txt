@@ -1,0 +1,56 @@
+1. APRIRE PROGETTO MATLAB
+
+
+Windows : 
+	matlab -nodisplay -nosplash -nodesktop -r "run('C:\Users\co996\Documents\Metodi del Calcolo scientifico\choleski-matlab\cholesky.m');"
+
+Ubuntu : 
+	matlab -nodisplay -nosplash -nodesktop -r "run('/home/co/Documents/Università/Metodi del calcolo scientifico/choleski-matlab/cholesky.m');"
+
+
+2. NUOVA SHELL 
+
+-windows
+	cd C:\Users\co996\AppData\Local\Programs\Python\Python37\Scripts (dove trovare file)
+	python psrecord NUMERO_PROCESSO --log prova.txt 
+-ubuntu
+	1) cd /home/co/.local/bin
+	2) python psrecord NUMERO_PROCESSO --log prova.txt 
+	
+	
+
+
+CONCLUDO PROCESSO SU MATLAB
+TROVO TXT E PLOT NEL PERCORSO SOPRA (\Scripts)
+
+
+PSRECORD: 
+
+set UMF_PACK = FALSE in cholesky.py
+- python psrecord NUMERO_PROCESSO --log ex15_false.txt 
+- python psrecord NUMERO_PROCESSO --log cfd1_false.txt
+- python psrecord NUMERO_PROCESSO --log shallow_water_false.txt
+- python psrecord NUMERO_PROCESSO --log cfd2_false.txt
+- python psrecord NUMERO_PROCESSO --log apache2_false.txt
+- python psrecord NUMERO_PROCESSO --log G3_circuit_false.txt
+- python psrecord NUMERO_PROCESSO --log stocF_false.txt
+- python psrecord NUMERO_PROCESSO --log flan_false.txt 
+- python psrecord NUMERO_PROCESSO --log parabolic_fem_false.txt 
+
+set UMF_PACK = TRUE
+- python psrecord NUMERO_PROCESSO --log ex15_true.txt 
+- python psrecord NUMERO_PROCESSO --log cfd1_true.txt
+- python psrecord NUMERO_PROCESSO --log shallow_water_true.txt
+- python psrecord NUMERO_PROCESSO --log cfd2_true.txt
+- python psrecord NUMERO_PROCESSO --log apache2_true.txt
+- python psrecord NUMERO_PROCESSO --log G3_circuit_true.txt
+- python psrecord NUMERO_PROCESSO --log stocF_true.txt
+- python psrecord NUMERO_PROCESSO --log flan_true.txt 
+- python psrecord NUMERO_PROCESSO --log parabolic_fem_true.txt 
+ 
+ 
+ 
+ 
+ 
+ 
+
