@@ -35,15 +35,15 @@ print(matlab_ubuntu)
 #for index, row in data.iterrows():
     #print(row['name'], row['time'])
 
+plt.plot( 'name', 'time', data=matlab_win, marker='o', markerfacecolor='orange', markersize=6, color='orange', linewidth=2, label='time Matlab Windows')
+plt.plot( 'name', 'time', data=matlab_ubuntu, marker='o', markerfacecolor='gold', markersize=6, color='gold', linewidth=2, label='time Matlab Ubuntu')
 
-plt.plot( 'name', 'time', data=matlab_win, marker='o', markerfacecolor='blue', markersize=12, color='skyblue', linewidth=4, label='time Matlab Windows')
-plt.plot( 'name', 'time', data=matlab_ubuntu, marker='o', markerfacecolor='red', markersize=12, color='orange', linewidth=4, label='time Matlab Ubuntu')
 
 plt.legend()
 plt.legend(ncol=2,loc='upper left')
 
 #plt.yscale('log')
-plt.title('Matlab Ubuntu vs Matlab Windows')
+#plt.title('Matlab Ubuntu vs Matlab Windows')
 plt.ylabel('Time')
 plt.xlabel('Matrix Name')
 

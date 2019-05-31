@@ -75,7 +75,7 @@ plt.legend(ncol=4,loc='upper left')
 
 plt.xticks([m + barWidth + barWidth/2 for m in range(len(mem_bef_matlab_win))], ['ex15', 'cfd1', 'shallow_water', 'cfd2', 'parabolic_fem', 'apache2', 'G3_circuit'])
 
-alfa = 0.3
+alfa = 0.15
 for i in range(len(pos)):
     plt.text(x = pos[i] - 0.015, y = mem_bef_matlab_win[i] + alfa * mem_bef_matlab_win[i], s = round(mem_bef_matlab_win[i],2), size = 7, rotation=90)
     plt.text(x = pos[i] + barWidth - 0.015, y = mem_after_matlab_win[i] + alfa * mem_after_matlab_win[i], s = round(mem_after_matlab_win[i],2), size = 7, rotation=90)
