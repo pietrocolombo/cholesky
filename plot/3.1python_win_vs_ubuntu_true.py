@@ -45,6 +45,15 @@ print(matlab_ubuntu)
 #for index, row in data.iterrows():
     #print(row['name'], row['time'])
 
+matlab_win['time'] = matlab_win['time'].astype(str)
+matlab_win['microsecondi'] = matlab_win['microsecondi'].astype(str)
+matlab_win['time'] = matlab_win['time'].str.cat(matlab_win['microsecondi'],sep=".")
+matlab_win['time'] = matlab_win['time'].astype(float)
+
+matlab_ubuntu['time'] = matlab_ubuntu['time'].astype(str)
+matlab_ubuntu['microsecondi'] = matlab_ubuntu['microsecondi'].astype(str)
+matlab_ubuntu['time'] = matlab_ubuntu['time'].str.cat(matlab_ubuntu['microsecondi'],sep=".")
+matlab_ubuntu['time'] = matlab_ubuntu['time'].astype(float)
 
 plt.plot( 'name', 'time', data=matlab_win, marker='o', markerfacecolor='blue', markersize=12, color='skyblue', linewidth=4, label='time Python Windows')
 plt.plot( 'name', 'time', data=matlab_ubuntu, marker='o', markerfacecolor='red', markersize=12, color='orange', linewidth=4, label='time Python Ubuntu', linestyle='--')
