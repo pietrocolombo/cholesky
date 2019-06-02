@@ -14,7 +14,10 @@ name = input("Enter name Matrix")
 
 path = "../../MatriciCalcoloNumericoPy/" + name + ".mtx"
 print(path)
-mat = scipy.io.mmread(path).toarray()#.tocsc()
+
+# carichiamo la matrice serve in array per il metodi linalg.cholesky
+mat = scipy.io.mmread(path)#.todense()#.toarray()#.tocsc()
+
 use_umfpack = True
 # type of mat scipy.sparse.csc.csc_matrix
 # https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html
@@ -24,13 +27,17 @@ n_rows, n_columns = mat.shape
 xe = scipy.ones(n_rows)
 
 start_time = datetime.now()
+# per il calcolo di b non va bene che sia array perciò la ricarico 
 b = scipy.io.mmread(path).tocsc() * xe
 
+print('prima')
+# fattorizzazione di cholesky ottendo una matrice triangolare
 L = linalg.cholesky(mat, lower=True)
 #(c, L) = linalg.cho_factor(mat, lower = True)
-
+print('dopo')
 #(c, L2) = linalg.cho_factor(mat, lower = False)
 print(b.shape)
+# usi la matrice L per risolvere il sistema dato b
 x = linalg.cho_solve((L,True), b)
 #x = spsolve(mat, b, use_umfpack = use_umfpack)
 print(x.shape)
@@ -42,7 +49,7 @@ print(xe)
 #relative_error = mat - A2
 t = datetime.now() - start_time
 print("prova")
-
+# calcolo l'errore relativo 
 relative_error = norm(x - xe, 2) / norm(xe, 2)
 
 print("finished!\n")
