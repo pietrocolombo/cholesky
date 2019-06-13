@@ -13,23 +13,28 @@ from scipy import linalg
 name = input("Enter name Matrix")
 
 path = "../../MatriciCalcoloNumericoPy/" + name + ".mtx"
+
+path = "../../MatriciCalcoloNumerico/" + name + ".mat"
 print(path)
 
 # carichiamo la matrice serve in array per il metodi linalg.cholesky
-mat = scipy.io.mmread(path)#.todense()#.toarray()#.tocsc()
-
+# mat = scipy.io.mmread(path)#.todense()#.toarray()#.tocsc()
+mat = scipy.io.loadmat(path)
+matrix = mat['Problem']['A'][0][0]
+print(matrix)
 use_umfpack = True
 # type of mat scipy.sparse.csc.csc_matrix
 # https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html
 
-n_rows, n_columns = mat.shape
+#n_rows, n_columns = A.shape
 #p_non_zero = mat.nnz / (n_rows * n_columns)
+n_rows, n_columns = matrix.shape
 xe = scipy.ones(n_rows)
 
 start_time = datetime.now()
 # per il calcolo di b non va bene che sia array perciò la ricarico 
-b = scipy.io.mmread(path).tocsc() * xe
-
+#b = scipy.io.mmread(path).tocsc() * xe
+b = matrix * xe
 print('prima')
 # fattorizzazione di cholesky ottendo una matrice triangolare
 L = linalg.cholesky(mat, lower=True)
