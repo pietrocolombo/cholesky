@@ -36,7 +36,7 @@ mat = args[6]
    x <- solve(A.chol, b)
    timeElapsed <- toc()
    
-   error <- norm(x - xe)/norm(xe)
+   error <- norm(x - xe, '2')/norm(xe, '2')
    
    csv_write <- data.frame(mat, error, timeElapsed$toc-timeElapsed$tic, .Platform$OS.type)
    if(!file.exists('data.csv')){
