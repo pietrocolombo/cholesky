@@ -15,7 +15,7 @@ syst = platform.system().lower()
 print(syst)
 
 names = ["ex15","cfd1","shallow_water1","cfd2","parabolic_fem","apache2","G3_circuit"]#"Flan_1565","StocF-1465"]
-programs = ["matlab", "python", "r"]
+programs = ["r","matlab", "python"]
 for p in programs:
     for m in names:
         if p == "python":
@@ -33,4 +33,9 @@ for p in programs:
             command.communicate()
         else:
             print("r")
+            m += ".mtx"
+            cmd = 'python profiler.py --include-children --log results/' + syst + '/r/' + m + '.txt --interval 0.01 '
+            cmd += '"Rscript r/chol.r ' + m + '"'
+            command = subprocess.Popen(cmd, shell = True)
+            command.communicate()
 

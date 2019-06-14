@@ -26,7 +26,7 @@ if(!require(profmem)){
 args <- commandArgs()
 mat = args[6]
 #for (mat in names){
-   path <- paste('../../MatriciCalcoloNumericoPy', mat, sep = "/")
+   path <- paste('../MatriciCalcoloNumerico', mat, sep = "/")
    print(path)
    memory <- profmem({
       tic()
