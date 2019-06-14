@@ -14,3 +14,7 @@ Rothberg/cfd2,123440,3085406,3.5352e-13,4.7692,1,matlab,ubuntu
 Wissgott/parabolic_fem,525825,3674625,1.0874e-12,2.5745,1,matlab,ubuntu
 GHS_psdef/apache2,715176,4817870,4.3712e-11,12.6787,1,matlab,ubuntu
 AMD/G3_circuit,1585478,7660826,3.5249e-12,15.8615,1,matlab,ubuntu
+FIDAP/ex15,6867,98671,6.862e-07,0.16009,1,matlab,ubuntu
+FIDAP/ex15,6867,98671,6.862e-07,0.11791,1,matlab,ubuntu
+FIDAP/ex15,6867,98671,6.862e-07,0.037422,1,matlab,ubuntu
+FIDAP/ex15,6867,98671,6.862e-07,0.038962,1,matlab,ubuntu
