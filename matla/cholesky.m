@@ -24,7 +24,7 @@ function [] = cholesky(name)
     fprintf(fid, '%s', num2str(timeElapsed), ',');
     fprintf(fid, '1,'); %Positive/Negative
     fprintf(fid, 'matlab,');
-    fprintf(fid, 'ubuntu'); %OS
+    fprintf(fid, 'windows'); %OS
     fprintf(fid, '\n');
 
     fclose(fid);

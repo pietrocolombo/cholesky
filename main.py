@@ -14,18 +14,17 @@ import subprocess
 syst = platform.system().lower()
 print(syst)
 
-names = ["ex15"]#,"cfd1","shallow_water1","cfd2","parabolic_fem","apache2","G3_circuit"] #,"Flan_1565","StocF-1465"]
-programs = ["python", "matlab", "r"]
+names = ["ex15","cfd1","shallow_water1","cfd2","parabolic_fem","apache2","G3_circuit"]#"Flan_1565","StocF-1465"]
+programs = ["matlab", "python", "r"]
 for p in programs:
     for m in names:
-        """if p == "python":
+        if p == "python":
             m += ".mat"
-            cmd = ("python profiler.py --include-children --log " + m + ".txt --interval 0.01 ")
+            cmd = 'python profiler.py --include-children --log results/' + syst + '/python/' + m + '.txt --interval 0.01 '
             cmd += '"python python/cholesky.py ' + m + '"'
             command = subprocess.Popen(cmd, shell = True)
             command.communicate()
-        el"""
-        if p == "matlab":
+        elif p == "matlab":
             m += ".mat"
             cmd = 'python profiler.py --include-children --log results/' + syst + '/matlab/' + m + '.txt --interval 0.01 '
             cmd += '"matlab -wait -nodisplay -nosplash -nodesktop -r \\"addpath(genpath(\'matla\'));cd \'matla\';cholesky(\'' + m + '\');exit;\\""'
