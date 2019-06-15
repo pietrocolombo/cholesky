@@ -4,3 +4,8 @@
 "cfd2.mtx",6.39115612845888e-12,128.58,NA,"windows"
 "ex15.mtx",7.94505946390561e-07,0.04,NA,"windows"
 "cfd1.mtx",3.0750142078702e-12,38.64,NA,"windows"
+"ex15.mtx",7.94505946390561e-07,0.0300000000000002,NA,"windows"
+"cfd1.mtx",3.0750142078702e-12,36.77,NA,"windows"
+"shallow_water1.mtx",2.27906620835074e-16,1.33,NA,"windows"
+"cfd2.mtx",6.39115612845888e-12,110.75,NA,"windows"
+"parabolic_fem.mtx",3.17173522126207e-12,17.93,NA,"windows"

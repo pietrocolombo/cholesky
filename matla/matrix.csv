@@ -1,0 +1,7 @@
+FIDAP/ex15,6867,98671,6.862e-07,0.11856,1,matlab,windows
+Rothberg/cfd1,70656,1825580,1.191e-13,2.0853,1,matlab,windows
+MaxPlanck/shallow_water1,81920,327680,2.3768e-16,0.30254,1,matlab,windows
+Rothberg/cfd2,123440,3085406,3.5352e-13,4.7959,1,matlab,windows
+Wissgott/parabolic_fem,525825,3674625,1.0874e-12,2.7187,1,matlab,windows
+GHS_psdef/apache2,715176,4817870,4.3712e-11,12.471,1,matlab,windows
+AMD/G3_circuit,1585478,7660826,3.5249e-12,17.706,1,matlab,windows
