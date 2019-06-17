@@ -23,25 +23,24 @@ if(!require(profmem)){
 args <- commandArgs()
 mat = args[6]
 #for (mat in names){
-   path <- paste('../MatriciCalcoloNumerico', mat, sep = "/")
-   print(path)
-   memory <- profmem({
-      tic()
-      matrix <- readMM(path)
+path <- paste('../MatriciCalcoloNumerico', mat, sep = "/")
+print(path)
+
+   tic()
+   matrix <- readMM(path)
    
-      size_mat <- dim(matrix)[1]
-      xe <- ones(size_mat,1)
+   size_mat <- dim(matrix)[1]
+   xe <- ones(size_mat,1)
    
-      tic()
-      b <- matrix %*% xe
+   tic()
+   b <- matrix %*% xe
    
-      A.chol <- Cholesky(matrix)
-      x <- solve(A.chol, b)
-      timeElapsed <- toc()
-   })
-      error <- norm(x - xe, '2')/norm(xe, '2')
+   A.chol <- Cholesky(matrix)
+   x <- solve(A.chol, b)
+   timeElapsed <- toc()
+   error <- norm(x - xe, '2')/norm(xe, '2')
    
-   csv_write <- data.frame(mat, error, timeElapsed$toc-timeElapsed$tic, sum(memory$bytes), .Platform$OS.type)
+   csv_write <- data.frame(mat, error, timeElapsed$toc-timeElapsed$tic, 0, .Platform$OS.type)
    if(!file.exists('data_r.csv')){
       write.table(csv_write,file="data_r.csv", append=TRUE,sep=",",row.names=FALSE) 
       first_time = FALSE

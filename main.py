@@ -12,7 +12,7 @@ syst = platform.system().lower()
 print(syst)
 
 names = ["ex15","cfd1","shallowwater","cfd2","parabolicfem","apache2","G3circuit"]#"Flan_1565","StocF-1465"]
-programs = [ "matlab", "python", "r"]
+programs = ["matlab"]
 for p in programs:
     for m in names:
         if p == "python":
@@ -25,13 +25,9 @@ for p in programs:
             print(syst)
             m += ".mat"
             cmd = 'python profiler.py --include-children --log results/' + syst + '/matlab/' + m + '.txt --interval 0.01 '
-            if syst == "windows":
-                cmd += '"matlab -wait -nodisplay -nosplash -nodesktop -r \\"addpath(genpath(\'matla\'));cd \'matla\';cholesky(\'' + m + '\');exit;\\""'
-            elif syst == "linux":
-                cmd += '"matlab -wait -nodisplay -nosplash -nodesktop -r \\"addpath(genpath(\'matla\'));cd \'matla\';cholesky(\'' + m + '\');exit;\\""'
+            cmd += '"matlab -wait -nodisplay -nosplash -nodesktop -r \\"addpath(genpath(\'matla\'));cd \'matla\';cholesky(\'' + m + '\');exit;\\""'
             command = subprocess.Popen(cmd, shell = True)
             command.communicate()
-            #/usr/local/MATLAB/R2019a/bin/ (matlab alias)
         else:
             print("r")
             m += ".mtx"

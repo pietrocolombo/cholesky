@@ -2,6 +2,7 @@ function [] = cholesky(name)
 
     %f = fullfile('myfolder','mysubfolder','myfile.m');
     path = fullfile('../../','MatriciCalcoloNumerico',name);
+    path
     matrix = importdata(path);
     A = matrix.A;
     size_mat = size(A);
