@@ -1,21 +1,18 @@
 import csv
 import platform
-import cvxopt, cvxpy
 import numpy
 from datetime import datetime
 from scipy import io, linalg
-from scipy.sparse.linalg import norm, spsolve
-from scipy.linalg import norm
-from cvxopt import cholmod, matrix, sparse
-from cvxpy.interface import matrix_utilities
+import time
+
 import os, platform
 import subprocess
 
 syst = platform.system().lower()
 print(syst)
 
-names = ["ex15","cfd1","shallow_water1","cfd2","parabolic_fem","apache2","G3_circuit"]#"Flan_1565","StocF-1465"]
-programs = ["r","matlab", "python"]
+names = ["ex15","cfd1","shallowwater","cfd2","parabolicfem","apache2","G3circuit"]#"Flan_1565","StocF-1465"]
+programs = [ "matlab"]
 for p in programs:
     for m in names:
         if p == "python":
@@ -27,7 +24,12 @@ for p in programs:
         elif p == "matlab":
             m += ".mat"
             cmd = 'python profiler.py --include-children --log results/' + syst + '/matlab/' + m + '.txt --interval 0.01 '
-            cmd += '"matlab -wait -nodisplay -nosplash -nodesktop -r \\"addpath(genpath(\'matla\'));cd \'matla\';cholesky(\'' + m + '\');exit;\\""'
+            if syst is "windows":
+                cmd += '"matlab -wait -nodisplay -nosplash -nodesktop -r \\"addpath(genpath(\'matla\'));cd \'matla\';cholesky(\'' + m + '\');exit;\\""'
+            elif syst is "unix":
+                cmd += '"/usr/local/MATLAB/R2019a/bin/matlab -wait -nodisplay -nosplash -nodesktop -r \\"addpath(genpath(\'matla\'));cd \'matla\';cholesky(\'' + m + '\');exit;\\""'
+             
+            
             print(cmd)
             command = subprocess.Popen(cmd, shell = True)
             command.communicate()

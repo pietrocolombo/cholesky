@@ -1,7 +1,4 @@
-if(!require(R.matlab)){
-   install.packages("R.matlab")
-   library("R.matlab")
-}
+
 if(!require(rmatio)){
    install.packages("rmatio")
    library("R.matlab")
