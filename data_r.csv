@@ -1,0 +1,8 @@
+"mat","error","timeElapsed.toc...timeElapsed.tic","sum.memory.bytes.",".Platform.OS.type"
+"ex15.mtx",7.94505946390562e-07,0.089,NA,"unix"
+"cfd1.mtx",3.07501420787021e-12,31.248,1443268248,"unix"
+"shallowwater.mtx",2.27906620835083e-16,1.335,111490640,"unix"
+"cfd2.mtx",6.39115612845891e-12,89.733,2843954560,"unix"
+"parabolicfem.mtx",3.17173522126214e-12,14.606,1532297360,"unix"
+"apache2.mtx",5.98789396868666e-11,339.151,6689608032,"unix"
+"G3circuit.mtx",8.00663635006339e-12,372.839,7368191456,"unix"

@@ -42,10 +42,10 @@ mat = args[6]
       error <- norm(x - xe, '2')/norm(xe, '2')
    
    csv_write <- data.frame(mat, error, timeElapsed$toc-timeElapsed$tic, sum(memory$bytes), .Platform$OS.type)
-   if(!file.exists('data.csv')){
-      write.table(csv_write,file="data.csv", append=TRUE,sep=",",row.names=FALSE) 
+   if(!file.exists('data_r.csv')){
+      write.table(csv_write,file="data_r.csv", append=TRUE,sep=",",row.names=FALSE) 
       first_time = FALSE
    }else{
-      write.table(csv_write,file="data.csv", append=TRUE,sep=",",col.names=FALSE,row.names=FALSE)
+      write.table(csv_write,file="data_r.csv", append=TRUE,sep=",",col.names=FALSE,row.names=FALSE)
    }
 #}
