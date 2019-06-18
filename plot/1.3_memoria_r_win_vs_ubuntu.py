@@ -162,18 +162,18 @@ for i in range(files_r_ubuntu.__len__()):
 
 
 # position bars
-n = max(len(mem_bef_python_ubuntu),len(mem_after_python_ubuntu),len(mem_bef_python_win),len(mem_after_python_win))
+n = max(len(mem_bef_r_ubuntu),len(mem_after_r_ubuntu),len(mem_bef_r_win),len(mem_after_r_win))
 pos = np.arange(n)
 
-bar1 = plt.bar(pos, mem_bef_python_ubuntu, width = barWidth, color = 'r', label='Python before ubuntu')
-bar2 = plt.bar(pos+barWidth, mem_after_python_ubuntu, width = barWidth, color = 'b', label='Python after ubuntu')
+bar1 = plt.bar(pos, mem_bef_r_ubuntu, width = barWidth, color = 'r', label='Python before ubuntu')
+bar2 = plt.bar(pos+barWidth, mem_after_r_ubuntu, width = barWidth, color = 'b', label='Python after ubuntu')
 
-bar3 = plt.bar(pos+barWidth+barWidth, mem_bef_python_win, width = barWidth, color = 'g', label='Python before win')
-bar4 = plt.bar(pos+barWidth+barWidth+barWidth, mem_after_python_win, width = barWidth, color = 'y', label='Python after win')
+bar3 = plt.bar(pos+barWidth+barWidth, mem_bef_r_win, width = barWidth, color = 'g', label='Python before win')
+bar4 = plt.bar(pos+barWidth+barWidth+barWidth, mem_after_r_win, width = barWidth, color = 'y', label='Python after win')
 
 plt.legend(ncol=4,loc='upper left')
 
-plt.xticks([m + barWidth + barWidth/2 for m in range(len(mem_bef_python_ubuntu))], ['ex15', 'cfd1', 'shallow_water', 'cfd2', 'parabolic_fem', 'apache2', 'G3_circuit'])
+plt.xticks([m + barWidth + barWidth/2 for m in range(len(mem_bef_r_ubuntu))], ['ex15', 'cfd1', 'shallow_water', 'cfd2', 'parabolic_fem', 'apache2', 'G3_circuit'])
 plt.yscale('log')
 
 for rect in bar1 + bar2 + bar3 + bar4:
@@ -192,7 +192,7 @@ for i in range(len(pos)):
     plt.text(x = pos[i] + barWidth + barWidth - 0.015, y = mem_bef_matlab_ubuntu[i] + alfa * mem_bef_matlab_ubuntu[i], s = round(mem_bef_matlab_ubuntu[i],2), size = 7, rotation=90)
     plt.text(x = pos[i] + barWidth + barWidth + barWidth - 0.015, y = mem_after_matlab_ubuntu[i] + alfa * mem_after_matlab_ubuntu[i], s = round(mem_after_matlab_ubuntu[i],2), size = 7, rotation=90)
 '''
-#plt.title('Python Ubuntu vs Python Windows with UMF_PACK FALSE')
+#plt.title('R Ubuntu vs R Windows with UMF_PACK FALSE')
 plt.ylabel('Memory')
 plt.xlabel('Matrix Name')
 

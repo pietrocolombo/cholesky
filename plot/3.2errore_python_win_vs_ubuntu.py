@@ -60,7 +60,7 @@ data["time"] = pd.to_numeric(data["time"])
 data = data.dropna()
 
 python_win = data.loc[data['os']=='Windows']
-python_ubuntu = data.loc[data['os']=='ubuntu']
+python_ubuntu = data.loc[data['os']=='Linux']
 print(python_win)
 #python_win["time"] = pd.to_numeric(python_win["time"])
 
@@ -93,8 +93,8 @@ print(r_win)
 #for index, row in data.iterrows():
     #print(row['name'], row['time'])
 
-plt.plot( 'name', 'relative_error', data=matlab_win, marker='o', markerfacecolor='blue', markersize=12, color='skyblue', linewidth=4, label='Relative error Python Windows')
-plt.plot( 'name', 'relative_error', data=matlab_ubuntu, marker='o', markerfacecolor='red', markersize=12, color='orange', linewidth=4, label='Relative error Python Ubuntu', linestyle='--')
+plt.plot( 'name', 'relative_error', data=python_win, marker='o', markerfacecolor='blue', markersize=12, color='skyblue', linewidth=4, label='Relative error Python Windows')
+plt.plot( 'name', 'relative_error', data=python_ubuntu, marker='o', markerfacecolor='red', markersize=12, color='orange', linewidth=4, label='Relative error Python Ubuntu', linestyle='--')
 
 plt.legend()
 plt.legend(ncol=2,loc='upper right')

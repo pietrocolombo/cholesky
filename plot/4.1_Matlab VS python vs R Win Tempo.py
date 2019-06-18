@@ -60,7 +60,7 @@ data["time"] = pd.to_numeric(data["time"])
 data = data.dropna()
 
 python_win = data.loc[data['os']=='Windows']
-python_ubuntu = data.loc[data['os']=='ubuntu']
+python_ubuntu = data.loc[data['os']=='Linux']
 print(python_win)
 #python_win["time"] = pd.to_numeric(python_win["time"])
 

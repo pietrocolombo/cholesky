@@ -4,7 +4,6 @@ shallow_water1,2.28E-16,1.335,111490640,unix
 cfd2,6.39E-12,89.733,2843954560,unix
 parabolic_fem,3.17E-12,14.606,1532297360,unix
 apache2,5.99E-11,339.151,6689608032,unix
-G3_circuit,8.01E-12,372.839,7368191456,unix
 "ex15",7.94505946390561e-07,0.05,NA,"windows"
 "cfd1",3.0750142078702e-12,37.41,NA,"windows"
 "shallow_water1",2.27906620835074e-16,1.31,NA,"windows"
