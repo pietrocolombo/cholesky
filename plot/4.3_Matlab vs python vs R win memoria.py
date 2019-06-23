@@ -171,8 +171,8 @@ bar2 = plt.bar(pos+barWidth, mem_after_r_ubuntu, width = barWidth, color = 'b', 
 bar3 = plt.bar(pos+barWidth+barWidth, mem_bef_python_win, width = barWidth, color = 'g', label='Python before Windows')
 bar4 = plt.bar(pos+barWidth+barWidth+barWidth, mem_after_python_win, width = barWidth, color = 'y', label='Python after Windows')
 
-bar5 = plt.bar(pos+barWidth * 4, mem_bef_matlab_win, width = barWidth, color = 'g', label='Matlab before Windows')
-bar6 = plt.bar(pos+barWidth * 5, mem_after_matlab_win, width = barWidth, color = 'y', label='Matlabafter Windows')
+bar5 = plt.bar(pos+barWidth * 4, mem_bef_matlab_win, width = barWidth, color = 'purple', label='Matlab before Windows')
+bar6 = plt.bar(pos+barWidth * 5, mem_after_matlab_win, width = barWidth, color = 'darkslategrey', label='Matlab after Windows')
 
 plt.legend(ncol=4,loc='upper left')
 
