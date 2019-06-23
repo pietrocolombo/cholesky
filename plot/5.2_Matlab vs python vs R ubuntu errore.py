@@ -93,13 +93,13 @@ print(r_win)
 #for index, row in data.iterrows():
     #print(row['name'], row['time'])
 
-plt.plot( 'name', 'relative_error', data=matlab_ubuntu, marker='o', markerfacecolor='orange', markersize=6, color='orange', linewidth=2, label='relative error Matlab Windows')
-plt.plot( 'name', 'relative_error', data=python_ubuntu, marker='o', markerfacecolor='gold', markersize=6, color='gold', linewidth=2, label='relative error Python Windows')
-plt.plot( 'name', 'relative_error', data=r_ubuntu, marker='o', markerfacecolor='red', markersize=6, color='red', linewidth=2, label='relative error R Windows')
+plt.plot( 'name', 'relative_error', data=matlab_ubuntu, marker='o', markerfacecolor='orange', markersize=6, color='orange', linewidth=2, label='relative error Matlab Ubuntu')
+plt.plot( 'name', 'relative_error', data=python_ubuntu, marker='o', markerfacecolor='gold', markersize=6, color='gold', linewidth=2, label='relative error Python Ubuntu')
+plt.plot( 'name', 'relative_error', data=r_ubuntu, marker='o', markerfacecolor='red', markersize=6, color='red', linewidth=2, label='relative error R Ubuntu')
 
 
 plt.legend()
-plt.legend(ncol=2,loc='upper left')
+plt.legend(ncol=2,loc='upper right')
 
 plt.yscale('log')
 #plt.title('Matlab Ubuntu vs Matlab Windows')

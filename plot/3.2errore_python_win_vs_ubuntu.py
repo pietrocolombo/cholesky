@@ -100,7 +100,7 @@ plt.legend()
 plt.legend(ncol=2,loc='upper right')
 
 plt.yscale('log')
-plt.title('Python Ubuntu vs Python Windows')
+#plt.title('Python Ubuntu vs Python Windows')
 plt.ylabel('Relative error')
 plt.xlabel('Matrix Name')
 

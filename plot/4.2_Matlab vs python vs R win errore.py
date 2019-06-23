@@ -99,7 +99,7 @@ plt.plot( 'name', 'relative_error', data=r_win, marker='o', markerfacecolor='red
 
 
 plt.legend()
-plt.legend(ncol=2,loc='upper left')
+plt.legend(ncol=2,loc='upper right')
 
 plt.yscale('log')
 #plt.title('Matlab Ubuntu vs Matlab Windows')
