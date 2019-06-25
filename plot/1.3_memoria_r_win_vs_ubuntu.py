@@ -165,11 +165,11 @@ for i in range(files_r_ubuntu.__len__()):
 n = max(len(mem_bef_r_ubuntu),len(mem_after_r_ubuntu),len(mem_bef_r_win),len(mem_after_r_win))
 pos = np.arange(n)
 
-bar1 = plt.bar(pos, mem_bef_r_ubuntu, width = barWidth, color = 'r', label='Python before ubuntu')
-bar2 = plt.bar(pos+barWidth, mem_after_r_ubuntu, width = barWidth, color = 'b', label='Python after ubuntu')
+bar1 = plt.bar(pos, mem_bef_r_ubuntu, width = barWidth, color = 'r', label='R before ubuntu')
+bar2 = plt.bar(pos+barWidth, mem_after_r_ubuntu, width = barWidth, color = 'b', label='R after ubuntu')
 
-bar3 = plt.bar(pos+barWidth+barWidth, mem_bef_r_win, width = barWidth, color = 'g', label='Python before win')
-bar4 = plt.bar(pos+barWidth+barWidth+barWidth, mem_after_r_win, width = barWidth, color = 'y', label='Python after win')
+bar3 = plt.bar(pos+barWidth+barWidth, mem_bef_r_win, width = barWidth, color = 'g', label='R before win')
+bar4 = plt.bar(pos+barWidth+barWidth+barWidth, mem_after_r_win, width = barWidth, color = 'y', label='R after win')
 
 plt.legend(ncol=4,loc='upper left')
 

@@ -168,11 +168,11 @@ pos = np.arange(n)
 bar1 = plt.bar(pos, mem_bef_r_ubuntu, width = barWidth, color = 'r', label='R before ubuntu')
 bar2 = plt.bar(pos+barWidth, mem_after_r_ubuntu, width = barWidth, color = 'b', label='R after ubuntu')
 
-bar3 = plt.bar(pos+barWidth+barWidth, mem_bef_python_win, width = barWidth, color = 'g', label='Python before ubuntu')
-bar4 = plt.bar(pos+barWidth+barWidth+barWidth, mem_after_python_win, width = barWidth, color = 'y', label='Python after ubuntu')
+bar3 = plt.bar(pos+barWidth+barWidth, mem_bef_python_ubuntu, width = barWidth, color = 'g', label='Python before ubuntu')
+bar4 = plt.bar(pos+barWidth+barWidth+barWidth, mem_after_python_ubuntu, width = barWidth, color = 'y', label='Python after ubuntu')
 
-bar5 = plt.bar(pos+barWidth * 4, mem_bef_matlab_win, width = barWidth, color = 'purple', label='Matlab before ubuntu')
-bar6 = plt.bar(pos+barWidth * 5, mem_after_matlab_win, width = barWidth, color = 'darkslategrey', label='Matlab after ubuntu')
+bar5 = plt.bar(pos+barWidth * 4, mem_bef_matlab_ubuntu, width = barWidth, color = 'purple', label='Matlab before ubuntu')
+bar6 = plt.bar(pos+barWidth * 5, mem_after_matlab_ubuntu, width = barWidth, color = 'darkslategrey', label='Matlab after ubuntu')
 
 plt.legend(ncol=4,loc='upper left')
 

@@ -278,7 +278,7 @@ plt.plot( 'name', 'virtual', data=result_r_win, marker='o', markerfacecolor='sie
 plt.plot( 'name', 'virtual', data=result_r_ubuntu, marker='o', markerfacecolor='silver', markersize=6, color='silver', linewidth=2, label='Memoria R Ubuntu', linestyle='--')
 
 
-print(python_ubuntu)
+print(result_matlab_ubuntu)
 plt.legend()
 plt.legend(ncol=4,loc='upper center', frameon=False, bbox_to_anchor=(0.5, 1.0), bbox_transform=plt.gcf().transFigure)
 plt.grid(color='grey', linestyle='-', linewidth=0.1, axis='y')

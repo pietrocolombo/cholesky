@@ -162,11 +162,11 @@ for i in range(files_r_ubuntu.__len__()):
 
 
 # position bars
-n = max(len(mem_bef_r_ubuntu),len(mem_after_r_ubuntu),len(mem_bef_r_win),len(mem_after_r_win))
+n = max(len(mem_bef_r_win),len(mem_after_r_win),len(mem_bef_r_win),len(mem_after_r_win))
 pos = np.arange(n)
 
-bar1 = plt.bar(pos, mem_bef_r_ubuntu, width = barWidth, color = 'r', label='R before Windows')
-bar2 = plt.bar(pos+barWidth, mem_after_r_ubuntu, width = barWidth, color = 'b', label='R after Windows')
+bar1 = plt.bar(pos, mem_bef_r_win, width = barWidth, color = 'r', label='R before Windows')
+bar2 = plt.bar(pos+barWidth, mem_after_r_win, width = barWidth, color = 'b', label='R after Windows')
 
 bar3 = plt.bar(pos+barWidth+barWidth, mem_bef_python_win, width = barWidth, color = 'g', label='Python before Windows')
 bar4 = plt.bar(pos+barWidth+barWidth+barWidth, mem_after_python_win, width = barWidth, color = 'y', label='Python after Windows')
